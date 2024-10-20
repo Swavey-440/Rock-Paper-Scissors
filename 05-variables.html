@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Variables</title>
+  <style>
+    body {
+      background-color: beige;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      font-size: 15px;
+      color: black;
+    }
+
+    .heading {
+      font-weight: bold;
+      letter-spacing: 1px;
+      font-size: 18px;
+      text-transform: uppercase;
+    }
+
+    .output {
+      font-weight: normal;
+    }
+
+    .report {
+      font-size: 12px;
+      color: red;
+      font-weight: bold;
+      letter-spacing: 0.5px;
+      height: 10px;
+    }
+
+    button {
+      color: white;
+      background-color: navy;
+      font-size: 14px;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 50px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <p class="heading">Cart Quantity</p>
+  <p class="output">0</p>
+  <p class="report"></p>
+  <button class="show" onclick="
+    cart('show');
+  ">Show Quantity</button>
+
+  <button class="add" onclick="
+    cart('add');
+  ">Add to Cart</button>
+
+  <button class="+2" onclick="
+    cart('+2');
+ ">+2</button>
+
+  <button class="+3" onclick="
+   cart('+3');
+ ">+3</button>
+
+ <button class="-1" onclick="
+  cart('-1')
+ ">-1</button>
+
+  <button class="-2" onclick="
+  cart('-2')
+  ">-2</button>
+
+  <button class="reset" onclick="
+     cart('reset');
+  ">Reset Cart</button>
+
+  <script>
+    let cartQuantity = 0;
+    let out = document.querySelector('.output');
+    let report = document.querySelector('.report');
+
+    function cart(params) {
+      if (params === 'show') {
+        out.innerHTML = cartQuantity;
+      } 
+
+      if (params === 'add') {
+        out.innerHTML = cartQuantity += 1;
+      }
+
+      if (params === '+2') {
+        out.innerHTML = cartQuantity += 2;
+      }
+
+      if (params === '+3') {
+        out.innerHTML = cartQuantity += 3;
+      }
+
+      if (params === '-1') {
+        out.innerHTML = cartQuantity -= 1;
+        reports();
+      }
+
+      if (params === '-2') {
+        out.innerHTML = cartQuantity -= 2;
+        reports();
+      }
+
+      if (params === 'reset') {
+        cartQuantity = 0;
+        report.innerHTML =  'Cart was reset.';
+        setTimeout(() => {
+          report.innerHTML =  '';
+        }, 2000);
+        out.innerHTML = cartQuantity;
+      }
+    }
+
+    function reports() {
+      if (cartQuantity < 0) {
+        cartQuantity = 0;
+        report.innerHTML = 'Cart is empty';
+        out.innerHTML = 0;
+        setTimeout(() => {
+          report.innerHTML = '';
+        }, 2000)
+      }
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Booleans</title>
+</head>
+<body>
+  <input type="text" class="input" placeholder="Must be 18 and above">
+  <button class="but" onclick="
+   const value = Number(document.querySelector('.input').value); 
+
+   if (value >= 18) 
+     console.log('You can drive');
+    else if (value === 17) 
+     console.log('Almost there'); 
+    else if (value < 17) 
+    console.log('You are not permitted to drive');
+  ">Enter</button>
+
+  <script>
+
+  </script>
+</body>
+</html>

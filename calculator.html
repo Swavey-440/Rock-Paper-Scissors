@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calculator</title>
+
+  <style>
+    body {
+      background-color: gray;
+    }
+
+    .output {
+      text-align: end;
+      width: 210px;
+      font-size: 50px;
+      margin: 10px;
+      margin-bottom: 20px;
+      color: white;
+      overflow-x: hidden;
+    }
+
+    .rows {
+      display: grid;
+      grid-template-columns: 40px 40px 40px 40px;
+      column-gap: 20px;
+      row-gap: 10px;
+    }
+
+    .num {
+      background-color: white;
+      color: black;
+      border: none;
+      height: 40px;
+      border-radius: 20px;
+      cursor: pointer;
+    }
+
+    .first {
+      background-color: green;
+      color: white;
+    }
+
+    .second {
+      background-color: navy;
+      color: white;
+    }
+
+    .equal-to {
+      width: 100px;
+    }
+  
+  </style>
+</head>
+<body>
+
+  <p class="output">0</p>
+
+  <div class="rows first-row">
+    <button class="num first">C</button>
+    <button class="num first">+/-</button>
+    <button class="num first">%</button>
+    <button class="num first">/</button>
+
+    <button class="num">7</button>
+    <button class="num">8</button>
+    <button class="num">9</button>
+    <button class="num second">X</button>
+
+    <button class="num">4</button>
+    <button class="num">5</button>
+    <button class="num">6</button>
+    <button class="num second">-</button>
+
+    <button class="num" onclick="
+     document.querySelector('.output').innerHTML = 1;
+    ">1</button>
+    <button class="num" onclick="
+    document.querySelector('.output').innerHTML += 2;
+   ">2</button>
+    <button class="num">3</button>
+    <button class="num second" onclick="
+     document.querySelector('.output').innerHTML += '+';
+    ">+</button>
+
+    
+    <button class="num">0</button>
+    <button class="num">.</button>
+    <button class="num equal-to">=</button>
+  </div>
+
+  <script>
+    let calculation = 0;
+    document.querySelector('.output');
+  </script>
+</body>
+</html>
